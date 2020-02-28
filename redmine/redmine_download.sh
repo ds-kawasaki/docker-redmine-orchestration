@@ -1,14 +1,14 @@
 #!/bin/sh
 
-REDMINE_VERSION="4.0.4"
-MD5_CHECKSUM="35a4f60b35fed2b10d14cb12fc8aef50"
+REDMINE_VERSION="4.1.0"
+MD5_CHECKSUM="32c7b9ce4c419092da439b540cbc1dbf"
 
 echo "[INFO] Downloading..."
 
 cd $(dirname $0)
 echo pwd
 
-curl -O -s http://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz
+wget -q https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz
 
 line=`md5sum redmine-${REDMINE_VERSION}.tar.gz`
 set -f
