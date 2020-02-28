@@ -1,11 +1,11 @@
-FROM ruby:2.4.1-alpine
+FROM ruby:2.6-alpine3.10
 
-MAINTAINER YoshinoriN
+MAINTAINER ds-kawasaki
 
 RUN apk update --no-cache \
   && apk add --no-cache --virtual build-dependencies libffi-dev build-base \
-  && apk add --no-cache mysql-client tzdata mariadb-dev=10.1.32-r0 linux-headers=4.4.6-r1 imagemagick-dev=6.9.5.9-r1 \
-  && apk add --no-cache git \
+  && apk add --no-cache mysql-client tzdata mariadb-dev linux-headers imagemagick ghostscript ghostscript-fonts \
+  && apk add --no-cache git subversion \
   && mkdir -p /usr/src/app/redmine \
   && mkdir -p /usr/src/app/redmine/tmp/pids
 
